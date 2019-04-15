@@ -13,10 +13,8 @@ function tips()
 function update_sources_list()
 {
   printf '%s' '
-deb http://http.kali.org/kali sana main non-free contrib
-deb http://security.kali.org/kali-security sana/updates main contrib non-free
-deb-src http://http.kali.org/kali sana main non-free contrib
-deb-src http://security.kali.org/kali-security sana/updates main contrib non-free
+deb http://old.kali.org/kali sana main non-free contrib
+deb-src http://old.kali.org/kali sana main non-free contrib
 ' | sudo tee /etc/apt/sources.list > /dev/null
 }
 
@@ -32,6 +30,7 @@ function install_important_package()
   sudo apt-get install -y htop unzip bmon aptitude vim
   sudo aptitude install -y libtool shtool automake autoconf git-core pkg-config make gcc
   sudo apt-get install -y libpcsclite-dev libtalloc-dev
+  sudo apt-get install -y libghc-gnutls-dev
 }
 
 function set_gnu_arm_toolchain_script()
