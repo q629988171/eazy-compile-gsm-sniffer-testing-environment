@@ -20,6 +20,7 @@ deb-src http://old.kali.org/kali sana main non-free contrib
 
 function update_system()
 {
+  wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
   apt-get update && apt-get dist-upgrade -y 
 }
 
